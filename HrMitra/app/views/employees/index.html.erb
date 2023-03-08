@@ -1,0 +1,40 @@
+<div class="col-lg-12">
+    <%= flash[:notice] %>
+    <div class="card mt-5 mb-5 rounded-0">
+        <div class="card-body">
+            <h2 class="text-center">Listing Employees</h2>
+        </div>
+    </div>
+
+    <%= link_to "New Employee",new_employee_path, class: "btn btn-primary btn-lg mb-4 rounded-0" %>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="text-center">Name</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Address</th>
+                <th class="text-center">Current Age</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @employees.each do |employee| %>
+                <tr>
+                    <td><%= employee.name %> </td>
+                    <td><%= employee.email %></td>
+                    <td><%= employee.full_address %></td>
+                    <td><%= employee.current_age %></td>
+                    <td>
+                        <%= link_to "Edit",edit_employee_path(employee),class:"btn btn-primary btn-lg" %>
+                        <%= link_to "View",employee_path(employee),class:"btn btn-info btn-lg" %>
+                        <%= link_to "Destroy",employee_path(employee), method: :delete,class:"btn btn-danger btn-lg", data: {
+                            confirm: 'Are you sure to delete this employee and all of its documents?'
+                        } %>
+                        <%= link_to "Documents",employee_document_path(employee),class:"btn btn-primary btn-lg" %> 
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
