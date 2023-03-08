@@ -22,3 +22,19 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+Topics Covered By Me:
+
+* Routes 
+* Resources
+* Models
+* Controllers
+* CRUD Operations
+* Custom Validations
+* Custom Validations through additional File
+* Form in Rails
+* Before_save CallBack
+* Actions
+* BootStrap Integration
